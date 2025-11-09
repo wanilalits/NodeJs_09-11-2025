@@ -22,8 +22,8 @@ const userSchema = new mongoose.Schema({
 });
 
 // This will automatically connect to collection "userRegistrations"
-const User = mongoose.model('userRegistration', userSchema, 'userRegistrations');
 
+const User = mongoose.model('userRegistration', userSchema, 'userRegistrations');
 // 🧪 Routes
 app.get('/', (req, res) => {
   res.send('Hello from Node.js + MongoDB Atlas 💫');
@@ -39,7 +39,7 @@ app.post('/register', async (req, res) => {
     res.json({ success: true, message: 'User registered successfully!' });
   } catch (err) {
     console.error(err);
-    res.status(500).json({ success: false, message: err });
+    res.status(500).json({ success: false, message: toString.err });
   }
 });
 
