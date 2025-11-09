@@ -7,8 +7,8 @@ app.use(express.json());
 
 // Environment variables
 const PORT = process.env.PORT || 5000;
-//const MONGO_URI = process.env.MONGO_URI;
-const MONGO_URI = "mongodb+srv://lalilswani:KrGXqcaDbahGMmaL@cluster0.ygf21f6.mongodb.net/NodeJs_backend?retryWrites=true&w=majority&appName=Cluster0";
+const MONGO_URI = process.env.MONGO_URI;
+//const MONGO_URI = "mongodb+srv://lalilswani:KrGXqcaDbahGMmaL@cluster0.ygf21f6.mongodb.net/NodeJs_backend?retryWrites=true&w=majority&appName=Cluster0";
 // ✅ Connect to MongoDB Atlas
 mongoose.connect(MONGO_URI)
   .then(() => console.log('✅ Connected to MongoDB Atlas'))
@@ -36,10 +36,10 @@ app.post('/register', async (req, res) => {
     const newUser = new User({ name, email, password });
     await newUser.save();
 
-    res.json({ success: true, message: 'User registered successfully!' });
+    res.json({ success: true, message: 'New User registered successfully!' });
   } catch (err) {
     console.error(err);
-    res.status(500).json({ success: false, message: toString.err });
+    res.status(500).json({ success: false, message: err.message } );
   }
 });
 
