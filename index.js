@@ -1,3 +1,8 @@
+//git remote add origin https://github.com/wanilalits/NodeJs_09-11-2025.git
+//git branch -M main
+//git push -u origin main
+
+
 //node --watch server.js
 const express = require("express");
 const app = express();
@@ -13,7 +18,7 @@ app.get("/", (req, res) => {
 
 // Another example route
 app.get("/user", (req, res) => {
-  res.json({ name: "Lalit", role: "Developer" });
+  res.json({ name: "Lalit1", role: "Developer" });
 });
 
 // Start server
