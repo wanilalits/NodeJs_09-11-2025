@@ -7,8 +7,8 @@ app.use(express.json());
 
 // Environment variables
 const PORT = process.env.PORT || 5000;
-const MONGO_URI = process.env.MONGO_URI;
-
+//const MONGO_URI = process.env.MONGO_URI;
+const MONGO_URI = "mongodb+srv://lalilswani:KrGXqcaDbahGMmaL@cluster0.ygf21f6.mongodb.net/NodeJs_backend?retryWrites=true&w=majority&appName=Cluster0";
 // ✅ Connect to MongoDB Atlas
 mongoose.connect(MONGO_URI)
   .then(() => console.log('✅ Connected to MongoDB Atlas'))
